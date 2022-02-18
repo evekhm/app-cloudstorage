@@ -1,3 +1,13 @@
+variables: # TO be passed downstream
+  DEPLOY_PROJECT: 'gcp-solutions/hcls/claims-modernization/gitlab-test-examples/deployapplications'
+
 include:
 - project: 'gcp-solutions/hcls/claims-modernization/gitlab-ci'
   file: '.gitlab-ci-build-template.yml'
+- project: 'gcp-solutions/hcls/claims-modernization/gitlab-ci'
+  file: '.gitlab-ci-deploy-template.yml'
+
+stages:
+- build-image
+- generate-yml #Dynamically generate file with parameters
+- deploy-image
