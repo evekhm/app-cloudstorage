@@ -3,9 +3,9 @@ variables: # TO be passed downstream
 
 include:
 - project: 'gcp-solutions/hcls/claims-modernization/gitlab-ci'
-  file: '.build.gitlab-ci.yml'
+  file: '/.gitlab/ci/.build.gitlab-ci.yml'
 - project: 'gcp-solutions/hcls/claims-modernization/gitlab-ci'
-  file: '.deploy-trigger.gitlab-ci.yml'
+  file: '/.gitlab/ci/.deploy-trigger.gitlab-ci.yml'
 
 stages:
 - build
