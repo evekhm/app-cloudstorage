@@ -3,11 +3,11 @@ variables: # TO be passed downstream
 
 include:
 - project: 'gcp-solutions/hcls/claims-modernization/gitlab-ci'
-  file: '.gitlab-ci-build-template.yml'
+  file: '.build.gitlab-ci.yml'
 - project: 'gcp-solutions/hcls/claims-modernization/gitlab-ci'
-  file: '.gitlab-ci-deploy-template.yml'
+  file: '.deploy-trigger.gitlab-ci.yml'
 
 stages:
-- build-image
-- generate-yml #Dynamically generate file with parameters
-- deploy-image
+- build
+- vars #Dynamically generate file with parameters
+- deploy
